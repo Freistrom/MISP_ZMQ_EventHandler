@@ -1,0 +1,46 @@
+// User Login Event
+misp_json_user: {
+	"User": {
+        "id": "1",
+        "last_login": "1000046766",
+        "date_modified": 1000060160
+    }
+}
+
+// User Login Event
+misp_json_user: {
+	"User": {
+        "id": "1",
+        "current_login": 1000060160,
+        "date_modified": 1000060160
+    }
+}
+
+// User Create Event
+misp_json_user: {
+	"User": {
+        "server_id": 0,
+        "autoalert": "1",
+        "invited_by": "1",
+        "nids_sid": 5976699,
+        "termsaccepted": 0,
+        "role_id": "3",
+        "change_pw": 1,
+        "contactalert": "1",
+        "disabled": "0",
+        "current_login": "0",
+        "last_login": "0",
+        "force_logout": "0",
+        "email": "user@testemail.com",
+        "enable_password": "0",
+        "org_id": "1",
+        "authkey": "__<redacted>__",
+        "gpgkey": "__<redacted>__",
+        "notify": "1",
+        "date_created": 1000000000,
+        "date_modified": 1000000000,
+        "newsread": 0,
+        "certif_public": "",
+        "id": "4"
+    }
+}

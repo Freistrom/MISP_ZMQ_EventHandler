@@ -1,0 +1,47 @@
+// Organisation Create Event
+misp_json_organisation: {
+	"Organisation": {
+        "created_by": "1",
+        "local": "1",
+        "name": "test",
+        "uuid": "59c0367d-fe8c-42a4-9db2-03ecc0a83832",
+        "description": "Test",
+        "nationality": "Not specified",
+        "sector": "",
+        "type": "",
+        "contacts": "",
+        "logo": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        },
+        "date_created": "2017-09-18 23:11:28",
+        "date_modified": "2017-09-18 23:11:28",
+        "id": "10"
+    }
+}
+
+// Organisation Update Event
+misp_json_organisation: {
+	"Organisation": {
+        "local": "1",
+        "name": "test",
+        "uuid": "59c0367d-fe8c-42a4-9db2-03ecc0a83832",
+        "description": "Alternate Test",
+        "nationality": "Not specified",
+        "sector": "",
+        "type": "",
+        "contacts": "",
+        "logo": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        },
+        "id": "10",
+        "date_modified": "2017-09-18 23:11:37"
+    }
+}

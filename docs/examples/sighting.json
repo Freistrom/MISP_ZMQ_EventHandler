@@ -1,0 +1,27 @@
+// Sighting Addition Event
+misp_json_sighting: {
+    "Sighting": {
+        "type": "0",
+        "attribute_id": "164373",
+        "event_id": "625",
+        "org_id": "1",
+        "date_sighting": 1505767537,
+        "source": "",
+        "uuid": "59c03071-f480-4311-a710-03edc0a83832",
+        "id": "1"
+    }
+}
+
+// Sighting False Positive Event
+misp_json_sighting: {
+    "Sighting": {
+        "type": "1",
+        "attribute_id": "164373",
+        "event_id": "625",
+        "org_id": "1",
+        "date_sighting": 1505767543,
+        "source": "",
+        "uuid": "59c03077-d560-4a8b-b841-05b8c0a83832",
+        "id": "2"
+    }
+}
