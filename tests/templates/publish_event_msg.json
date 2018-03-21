@@ -1,0 +1,56 @@
+{
+    "Event": {
+        "id": 2,
+        "orgc_id": 1,
+        "org_id": 1,
+        "date": "2018-03-21",
+        "threat_level_id": 3,
+        "info": "test2",
+        "published": 1,
+        "uuid": "5ab2489a-3174-4c45-b575-1535c0a80018",
+        "attribute_count": 1,
+        "analysis": 0,
+        "timestamp": 1521633750,
+        "distribution": 1,
+        "proposal_email_lock": 0,
+        "locked": 0,
+        "publish_timestamp": 1521633762,
+        "sharing_group_id": 0,
+        "disable_correlation": 0,
+        "event_creator_email": "admin@admin.test",
+        "Org": {
+            "id": 1,
+            "name": "Freistrom",
+            "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018"
+        },
+        "Orgc": {
+            "id": 1,
+            "name": "Freistrom",
+            "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018"
+        },
+        "Attribute": [
+            {
+                "id": 1,
+                "type": "text",
+                "category": "Internal reference",
+                "to_ids": 0,
+                "uuid": "5ab249d6-539c-41b6-9529-1702c0a80018",
+                "event_id": 2,
+                "distribution": 0,
+                "timestamp": 1521633750,
+                "comment": "",
+                "sharing_group_id": 0,
+                "deleted": 0,
+                "disable_correlation": 0,
+                "object_id": 0,
+                "object_relation": null,
+                "value": "test2",
+                "ShadowAttribute": []
+            }
+        ],
+        "ShadowAttribute": [],
+        "RelatedEvent": [],
+        "Galaxy": [],
+        "Object": []
+    }
+}
