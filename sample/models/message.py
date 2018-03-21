@@ -1,13 +1,13 @@
 from abc import ABC, abstractmethod
 
 class Message(ABC):
-	def __init__(self):
-        super(AbstractOperation, self).__init__()
+    def __init__(self):
+        super().__init__()
 
-    @abstractmethod
+    @staticmethod
     def by_json(self, json):
         pass
 
-    @abstractmethod
+    @staticmethod
     def to_json(self):
-    	pass
+        pass
