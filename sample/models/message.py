@@ -5,7 +5,7 @@ class Message(ABC):
         super().__init__()
 
     @staticmethod
-    def by_json(self, json):
+    def from_json(self, json):
         pass
 
     @staticmethod

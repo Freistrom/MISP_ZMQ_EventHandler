@@ -17,7 +17,7 @@ class EventModelTest(unittest.TestCase):
         pass  # clean up
 
     def test_by_json(self):
-        event = Event.by_json(self, self.pub_event_msg)
+        event = Event.from_json(self, self.pub_event_msg)
         self.assertIsInstance(event, Event)
         self.assertTrue(hasattr(event, "id"))
         self.assertIs(event.id, 2)

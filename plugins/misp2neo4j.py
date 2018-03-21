@@ -1,4 +1,4 @@
 from .plugin import Plugin
 
 
-class Detector(Plugin):
+class Misp2Neo4J(Plugin):
