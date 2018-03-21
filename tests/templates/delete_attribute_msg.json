@@ -1,0 +1,39 @@
+{
+	"Attribute": {
+        "id": "164362",
+        "event_id": "625",
+        "category": "Network activity",
+        "type": "domain",
+        "value1": "microsoft.com",
+        "value2": "",
+        "to_ids": true,
+        "uuid": "59b81121-f4b4-4ed3-aa43-03eac0a83832",
+        "timestamp": 1505235262,
+        "distribution": "5",
+        "sharing_group_id": 0,
+        "comment": "",
+        "deleted": 1,
+        "disable_correlation": false,
+        "value": "microsoft.net"
+    },
+    "Event": {
+        "id": "625",
+        "org_id": "1",
+        "date": "2017-05-24",
+        "info": "M2M - Fwd: IMG_3428.pdf",
+        "user_id": "1",
+        "uuid": "59259036-fcd0-4749-8a6c-4d88950d210f",
+        "published": false,
+        "analysis": "1",
+        "attribute_count": "5",
+        "orgc_id": "2",
+        "timestamp": "1505235233",
+        "distribution": "3",
+        "sharing_group_id": "0",
+        "proposal_email_lock": false,
+        "locked": false,
+        "threat_level_id": "3",
+        "publish_timestamp": "1505233367",
+        "disable_correlation": false
+    }
+}
