@@ -3,7 +3,7 @@ import json
 
 
 class Attribute(Message):
-    """The MISP Event Model"""
+    """The MISP Attribute Model"""
 
     def from_json(self, json):
         attribute = Attribute()
