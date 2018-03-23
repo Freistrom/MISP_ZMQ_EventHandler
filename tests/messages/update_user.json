@@ -1,0 +1,38 @@
+{
+    "User": {
+        "id": 2,
+        "email": "d.spautz@freistrom-handel.de",
+        "last_login": 0,
+        "org_id": 1,
+        "termsaccepted": 1,
+        "autoalert": 1,
+        "newsread": 0,
+        "disabled": false
+    },
+    "Organisation": {
+        "id": 1,
+        "name": "Freistrom",
+        "description": "Automatically generated admin organisation",
+        "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018",
+        "nationality": "Germany",
+        "sector": "information security",
+        "type": "ADMIN",
+        "local": 1
+    },
+    "action": "add"
+}
+{
+    "Log": {
+        "org": "Freistrom",
+        "model": "User",
+        "model_id": 1,
+        "email": "admin@admin.test",
+        "action": "edit",
+        "title": "User (1): admin@admin.test",
+        "change": "role_id (4000000) => (1), nids_sid (0) => (4000000), gpgkey (1) => (), termsaccepted (0) => (1)",
+        "created": "2018-03-23 17:36:51",
+        "user_id": 0,
+        "description": ""
+    },
+    "action": "log"
+}

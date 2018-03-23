@@ -1,5 +1,4 @@
 {
-    "Event": {
         "id": 2,
         "orgc_id": 1,
         "org_id": 1,
@@ -52,5 +51,4 @@
         "RelatedEvent": [],
         "Galaxy": [],
         "Object": []
-    }
 }

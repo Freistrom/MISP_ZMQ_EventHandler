@@ -1,6 +1,10 @@
 from abc import ABC, abstractmethod
+import json
+from inflection import underscore
 
-class Message(ABC):
+
+class Model(ABC):
+
     def __init__(self):
         super().__init__()
 

@@ -1,0 +1,27 @@
+{
+    "Tag": {
+        "id": 1,
+        "name": "dfdgddddd",
+        "colour": "#c40808",
+        "exportable": 1,
+        "org_id": 1,
+        "user_id": 2,
+        "hide_tag": 0
+    },
+    "action": "delete"
+}
+{
+    "Log": {
+        "description": "Tag \"dfdgddddd\" (1) deleted by User \"admin@admin.test\" (1).",
+        "action": "delete",
+        "title": "dfdgddddd",
+        "model": "Tag",
+        "model_id": "1",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 18:29:00",
+        "change": ""
+    },
+    "action": "log"
+}

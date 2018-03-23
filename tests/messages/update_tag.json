@@ -1,0 +1,28 @@
+{
+    "Log": {
+        "model_id": "1",
+        "description": "Tag \"dfdgddddd\" (1) updated by User \"admin@admin.test\" (1).",
+        "action": "edit",
+        "change": "name (dfdgd) => (dfdgddddd)",
+        "changes": 1,
+        "title": "dfdgddddd",
+        "model": "Tag",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 18:28:35"
+    },
+    "action": "log"
+}
+{
+    "Tag": {
+        "id": 1,
+        "name": "dfdgddddd",
+        "colour": "#c40808",
+        "exportable": 1,
+        "org_id": 1,
+        "user_id": 2,
+        "hide_tag": 0
+    },
+    "action": "edit"
+}

@@ -1,0 +1,16 @@
+{
+    "Log": {
+        "model_id": "7",
+        "description": "Role \"test\" (7) added by User \"admin@admin.test\" (1).",
+        "action": "add",
+        "change": "perm_delegate () => (0), perm_auth () => (1), perm_site_admin () => (0), perm_regexp_access () => (0), perm_tagger () => (0), perm_template () => (0), perm_sharing_group () => (0), perm_tag_editor () => (0), perm_sighting () => (1), perm_object_template () => (0), default_role () => (0), name () => (test), perm_admin () => (0), perm_sync () => (1), perm_audit () => (1), created () => (2018-03-23 17:55:37)",
+        "changes": 16,
+        "title": "Role (7): test",
+        "model": "Role",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 17:55:37"
+    },
+    "action": "log"
+}

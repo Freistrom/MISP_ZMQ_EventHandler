@@ -1,0 +1,45 @@
+{
+    "Log": {
+        "model_id": "3",
+        "description": "Event (3) updated by User \"admin@admin.test\" (1).",
+        "action": "edit",
+        "change": "info (ddfgdfgdg) => (ddfgdfgdgsdfsdfsd)",
+        "changes": 1,
+        "title": "Event (3): ddfgdfgdgsdfsdfsd",
+        "model": "Event",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 17:45:03"
+    },
+    "action": "log"
+}
+{
+    "Event": {
+        "id": 3,
+        "org_id": 1,
+        "date": "2018-03-23",
+        "info": "ddfgdfgdgsdfsdfsd",
+        "user_id": 1,
+        "uuid": "5ab53cf3-a51c-42ec-9c47-1d47c0a80018",
+        "published": 0,
+        "analysis": 0,
+        "attribute_count": null,
+        "orgc_id": 1,
+        "timestamp": 1521827103,
+        "distribution": 1,
+        "sharing_group_id": 0,
+        "proposal_email_lock": 0,
+        "locked": 0,
+        "threat_level_id": 3,
+        "publish_timestamp": 0,
+        "disable_correlation": 0
+    },
+    "Orgc": {
+        "id": 1,
+        "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018",
+        "name": "Freistrom"
+    },
+    "EventTag": [],
+    "action": "edit"
+}

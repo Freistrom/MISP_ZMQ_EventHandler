@@ -1,0 +1,38 @@
+{
+    "Organisation": {
+        "local": "1",
+        "name": "Freistrom",
+        "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018",
+        "description": "Automatically generated admin organisation",
+        "restricted_to_domain": "",
+        "nationality": "Germany",
+        "sector": "information security",
+        "type": "ADMIN",
+        "contacts": "",
+        "logo": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        },
+        "id": "1",
+        "date_modified": "2018-03-23 17:39:20"
+    }
+}
+{
+    "Log": {
+        "model_id": "1",
+        "description": "Organisation \"Freistrom\" (1) updated by User \"admin@admin.test\" (1).",
+        "action": "edit",
+        "change": "date_modified (2018-03-23 17:36:17) => (2018-03-23 17:39:20)",
+        "changes": 1,
+        "title": "Freistrom",
+        "model": "Organisation",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 17:39:20"
+    },
+    "action": "log"
+}

@@ -1,18 +1,18 @@
 from .model import Model
 
 
-class Sighting(Message):
-    """The MISP Sighting Model"""
+class Tag(Message):
+    """The MISP Galaxy Model"""
 
     def __init__(self):
         pass
 
     def from_json(self, json):
-        sighting = Sighting()
+        tag = Tag()
         for key,value in json.items():
-            setattr(event,key,value)
+            setattr(tag,key,value)
 
-        return sighting
+        return tag
 
     def to_json(self):
         return json.dumps(self.__dict__)

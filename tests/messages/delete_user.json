@@ -1,0 +1,15 @@
+{
+    "Log": {
+        "org": "Freistrom",
+        "model": "User",
+        "model_id": 1,
+        "email": "admin@admin.test",
+        "action": "delete",
+        "title": "User (3): test@freistrom-handel.de",
+        "change": "",
+        "created": "2018-03-23 17:54:46",
+        "user_id": 0,
+        "description": ""
+    },
+    "action": "log"
+}

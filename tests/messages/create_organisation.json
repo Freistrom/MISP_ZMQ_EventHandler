@@ -1,0 +1,40 @@
+{
+    "Organisation": {
+        "created_by": 1,
+        "local": "1",
+        "name": "Test",
+        "uuid": "5ab53be5-f4e4-4969-b05e-1d47c0a80018",
+        "description": "",
+        "restricted_to_domain": "",
+        "nationality": "Bahrain",
+        "sector": "financial",
+        "type": "",
+        "contacts": "",
+        "logo": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        },
+        "date_created": "2018-03-23 17:40:05",
+        "date_modified": "2018-03-23 17:40:05",
+        "id": "2"
+    }
+}
+{
+    "Log": {
+        "model_id": "2",
+        "description": "Organisation \"Test\" (2) added by User \"admin@admin.test\" (1).",
+        "action": "add",
+        "change": "created_by () => (1), local () => (1), name () => (Test), uuid () => (5ab53be5-f4e4-4969-b05e-1d47c0a80018), nationality () => (Bahrain), sector () => (financial), date_created () => (2018-03-23 17:40:05), date_modified () => (2018-03-23 17:40:05)",
+        "changes": 8,
+        "title": "Test",
+        "model": "Organisation",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 17:40:05"
+    },
+    "action": "log"
+}

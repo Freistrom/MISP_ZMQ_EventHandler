@@ -1,0 +1,100 @@
+{
+    "User": {
+        "id": 2,
+        "email": "d.spautz@freistrom-handel.de",
+        "last_login": 0,
+        "org_id": 1,
+        "termsaccepted": 1,
+        "autoalert": 1,
+        "newsread": 0,
+        "disabled": false
+    },
+    "Organisation": {
+        "id": 1,
+        "name": "Freistrom",
+        "description": "Automatically generated admin organisation",
+        "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018",
+        "nationality": "Germany",
+        "sector": "information security",
+        "type": "ADMIN",
+        "local": 1
+    },
+    "action": "edit"
+}
+{
+    "Log": {
+        "model_id": "3",
+        "description": "User \"test@freistrom-handel.de\" (3) added by User \"admin@admin.test\" (1).",
+        "action": "add",
+        "change": "autoalert () => (1), invited_by () => (1), nids_sid () => (2732773), role_id () => (3), change_pw () => (1), contactalert () => (1), disabled () => (0), current_login () => (0), last_login () => (0), force_logout () => (0), email () => (test@freistrom-handel.de), org_id () => (2), authkey () => (Oz3hZFRTrefENYTBhYRtwwjyFXJRa0rvbmiL0peF), date_created () => (1521826953), date_modified () => (1521826953)",
+        "changes": 15,
+        "title": "User (3): test@freistrom-handel.de",
+        "model": "User",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 17:42:33"
+    },
+    "action": "log"
+}
+{
+    "Log": {
+        "org": "SYSTEM",
+        "model": "User",
+        "model_id": 3,
+        "email": "test@freistrom-handel.de",
+        "action": "email",
+        "title": "Email  to test@freistrom-handel.de sent, titled \"[ORGNAME MISP] New user registration\".",
+        "change": "",
+        "created": "2018-03-23 17:42:33",
+        "user_id": 0,
+        "description": ""
+    },
+    "action": "log"
+}
+{
+    "User": {
+        "id": 2,
+        "email": "d.spautz@freistrom-handel.de",
+        "last_login": 0,
+        "org_id": 1,
+        "termsaccepted": 1,
+        "autoalert": 1,
+        "newsread": 0,
+        "disabled": false
+    },
+    "Organisation": {
+        "id": 1,
+        "name": "Freistrom",
+        "description": "Automatically generated admin organisation",
+        "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018",
+        "nationality": "Germany",
+        "sector": "information security",
+        "type": "ADMIN",
+        "local": 1
+    },
+    "action": "add"
+}
+{
+    "User": {
+        "id": 2,
+        "email": "d.spautz@freistrom-handel.de",
+        "last_login": 0,
+        "org_id": 1,
+        "termsaccepted": 1,
+        "autoalert": 1,
+        "newsread": 0,
+        "disabled": false
+    },
+    "Organisation": {
+        "id": 1,
+        "name": "Freistrom",
+        "description": "Automatically generated admin organisation",
+        "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018",
+        "nationality": "Germany",
+        "sector": "information security",
+        "type": "ADMIN",
+        "local": 1
+    },
+    "action": "add"
+}

@@ -1,0 +1,16 @@
+{
+    "Log": {
+        "model_id": "7",
+        "description": "Role \"test2\" (7) updated by User \"admin@admin.test\" (1).",
+        "action": "edit",
+        "change": "name (test) => (test2)",
+        "changes": 1,
+        "title": "Role (7): test2",
+        "model": "Role",
+        "user_id": 1,
+        "email": "admin@admin.test",
+        "org": "Freistrom",
+        "created": "2018-03-23 17:56:12"
+    },
+    "action": "log"
+}

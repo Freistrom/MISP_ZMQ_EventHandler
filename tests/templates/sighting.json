@@ -1,6 +1,5 @@
 {
-	"Sighting": {
-        "type": "0",
+		"type": "0",
         "attribute_id": "164373",
         "event_id": "625",
         "org_id": "1",
@@ -8,5 +7,4 @@
         "source": "",
         "uuid": "59c03071-f480-4311-a710-03edc0a83832",
         "id": "1"
-    }
 }

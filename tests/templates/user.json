@@ -1,5 +1,4 @@
 {
-	"User": {
         "server_id": 0,
         "autoalert": "1",
         "invited_by": "1",
@@ -23,5 +22,4 @@
         "newsread": 0,
         "certif_public": "",
         "id": "4"
-    }
 }
