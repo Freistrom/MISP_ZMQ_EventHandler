@@ -1,16 +1,18 @@
 from .model import Model
+import json
+from inflection import underscore
 
 
-class Sighting(Message):
+class Sighting(Model):
     """The MISP Sighting Model"""
 
     def __init__(self):
         pass
 
-    def from_json(self, json):
+    def from_json(self, sighting_json):
         sighting = Sighting()
-        for key,value in json.items():
-            setattr(event,key,value)
+        for key,value in sighting_json.items():
+            setattr(sighting,key,value)
 
         return sighting
 

@@ -8,8 +8,8 @@ class GalaxyModelTest(unittest.TestCase):
 
     def setUp(self):
         try:
-            msg = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/galaxy_msg.json'))).read()
-            self.msg = json.loads(msg)
+            galaxy = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/galaxy.json')))
+            self.galaxy = json.load(galaxy)
         except NameError as e:
             raise Exception('No Galaxy Model Class defined!')
 
@@ -17,10 +17,10 @@ class GalaxyModelTest(unittest.TestCase):
         pass  # clean up
 
     def test_by_json(self):
-        galaxy = Galaxy.from_json(self, self.msg)
+        galaxy = Galaxy.from_json(self, self.galaxy)
         self.assertIsInstance(galaxy, Galaxy)
         self.assertTrue(hasattr(galaxy, "id"))
-        self.assertIs(galaxy.id, 2)
+        self.assertIs(galaxy.id, 1)
 
 if __name__ == '__main__':
    unittest.main()

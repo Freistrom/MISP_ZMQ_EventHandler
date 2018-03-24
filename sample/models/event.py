@@ -1,6 +1,15 @@
 from .model import Model
+from .organisation import Organisation
+from .misp_object import MispObject
+from .galaxy import Galaxy
+from .attribute import Attribute
 
-class Event(Message):
+
+import json
+from inflection import underscore
+
+
+class Event(Model):
     """The MISP Event Model"""
 
     def __init__(self):
@@ -10,26 +19,24 @@ class Event(Message):
         self.galaxies = []
         self.related_events = []
 
-    def from_json(self, json):
+    def from_json(self, event_json):
         event = Event()
-        for key,value in json.items():
+        for key,value in event_json.items():
             if type(value) == dict:
                 add_organistation = getattr(event, "add_{}".format(underscore(key)))
-                add_organistation(Organisation.from_json(value))
-
+                add_organistation(Organisation.from_json(self, value))
             elif type(value) == list:
-                for struct in value.items():
+                for struct in value:
                     add = getattr(event, "add_{}".format(underscore(key)))
                     if key in ["Attribute", "ShadowAttribute"]:
-                        add(Attribute.from_json(struct))
+                        add(Attribute.from_json(self, struct))
                     elif key == "RelatedEvent":
-                        add(Event.from_json(struct))
+                        add(Event.from_json(self, struct))
                     elif key == "Galaxy":
-                        add(Galaxy.from_json(struct))
+                        add(Galaxy.from_json(self, struct))
                     elif key == "Object":
-                        event.add_misp_object(MispObject.from_json(struct))
-
-            else
+                        event.add_misp_object(self, MispObject.from_json(self, struct))
+            else:
                 setattr(event,key,value)
 
         return event

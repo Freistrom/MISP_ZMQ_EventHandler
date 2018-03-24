@@ -1,24 +1,27 @@
 from .model import Model
+from .sighting import Sighting
+import json
+from inflection import underscore
 
 
-class Attribute(Message):
+class Attribute(Model):
     """The MISP Attribute Model"""
 
     def __init__(self):
         self.sightings = []
         self.shadow_attributes = []
 
-    def from_json(self, json):
+    def from_json(self, attribute_json):
         attribute = Attribute()
-        for key,value in json.items():
+        for key,value in attribute_json.items():
             if type(value) == list:
-                for struct in value.items():
-                    add = getattr(event, "add_{}".format(underscore(key)))
+                for struct in value:
+                    add = getattr(attribute, "add_{}".format(underscore(key)))
                     if key in ["ShadowAttribute"]:
                         add(Attribute.from_json(struct))
-                     if key in ["Sighting"]:
+                    elif key in ["Sighting"]:
                         add(Sighting.from_json(struct))
-            else
+            else:
                 setattr(attribute,key,value)
 
         return attribute

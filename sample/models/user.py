@@ -1,15 +1,17 @@
 from .model import Model
+import json
+from inflection import underscore
 
 
-class User(Message):
+class User(Model):
     """The MISP User Model"""
 
     def __init__(self):
         pass
 
-    def from_json(self, json):
+    def from_json(self, user_json):
         user = User()
-        for key,value in json.items():
+        for key,value in user_json.items():
             setattr(user,key,value)
 
         return user

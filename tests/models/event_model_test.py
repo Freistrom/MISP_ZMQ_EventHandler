@@ -8,8 +8,8 @@ class EventModelTest(unittest.TestCase):
 
     def setUp(self):
         try:
-            msg = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/publish_event_msg.json'))).read()
-            self.pub_event_msg = json.loads(msg)
+            event = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/event.json')))
+            self.event = json.load(event)
         except NameError as e:
             raise Exception('No Event Model Class defined!')
 
@@ -17,7 +17,7 @@ class EventModelTest(unittest.TestCase):
         pass  # clean up
 
     def test_by_json(self):
-        event = Event.from_json(self, self.pub_event_msg)
+        event = Event.from_json(self, self.event)
         self.assertIsInstance(event, Event)
         self.assertTrue(hasattr(event, "id"))
         self.assertIs(event.id, 2)

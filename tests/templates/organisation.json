@@ -1,5 +1,5 @@
  {
-        "local": "1",
+        "local": 1,
         "name": "test",
         "uuid": "59c0367d-fe8c-42a4-9db2-03ecc0a83832",
         "description": "Alternate Test",
@@ -14,6 +14,6 @@
             "error": 4,
             "size": 0
         },
-        "id": "10",
+        "id": 10,
         "date_modified": "2017-09-18 23:11:37"
 }

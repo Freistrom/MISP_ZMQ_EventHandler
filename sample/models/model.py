@@ -9,7 +9,7 @@ class Model(ABC):
         super().__init__()
 
     @staticmethod
-    def from_json(self, json):
+    def from_json(self, model_json):
         pass
 
     @staticmethod

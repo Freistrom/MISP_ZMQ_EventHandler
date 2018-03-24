@@ -2,16 +2,16 @@ from sample.models.organisation import Organisation
 import unittest
 import json
 import os
+import pdb
+
 
 class OrganisationModelTest(unittest.TestCase):
-    """Event Model test cases."""
+    """Organisation Model test cases."""
 
     def setUp(self):
         try:
-            create_msg = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/create_organisation_msg.json'))).read()
-            update_msg = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/update_organisation_msg.json'))).read()
-            self.create_msg = json.loads(create_msg)
-            self.update_msg = json.loads(update_msg)
+            organisation = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/organisation.json')))
+            self.organisation = json.load(organisation)
         except NameError as e:
             raise Exception('No Organisation Model Class defined!')
 
@@ -19,10 +19,10 @@ class OrganisationModelTest(unittest.TestCase):
         pass  # clean up
 
     def test_by_json(self):
-        organisation = Organisation.from_json(self, self.create_msg)
+        organisation = Organisation.from_json(self, self.organisation)
         self.assertIsInstance(organisation, Organisation)
         self.assertTrue(hasattr(organisation, "id"))
-        self.assertIs(organisation.id, 2)
+        self.assertIs(organisation.id, 10)
 
 if __name__ == '__main__':
    unittest.main()

@@ -1,17 +1,22 @@
 from .model import Model
+from .logo import Logo
+import json
+from inflection import underscore
+import pdb
 
 
-class Organisation(Message):
+
+class Organisation(Model):
     """The MISP Organisation Model"""
 
     def __init__(self):
         pass
 
-    def from_json(self, json):
+    def from_json(self, organisation_json):
         organisation = Organisation()
-        for key,value in json.items():
+        for key,value in organisation_json.items():
             if type(value) == dict:
-                organisation.add_logo(Logo.from_json(struct))
+                organisation.add_logo(Logo.from_json(self, value))
             else:
                 setattr(organisation,key,value)
 

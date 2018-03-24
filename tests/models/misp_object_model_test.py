@@ -8,8 +8,8 @@ class MispObjectModelTest(unittest.TestCase):
 
     def setUp(self):
         try:
-            msg = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/misp_object_msg.json'))).read()
-            self.msg = json.loads(msg)
+            misp_object = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/misp_object.json')))
+            self.misp_object = json.load(misp_object)
         except NameError as e:
             raise Exception('No MispObject Model Class defined!')
 
@@ -17,10 +17,10 @@ class MispObjectModelTest(unittest.TestCase):
         pass  # clean up
 
     def test_by_json(self):
-        misp_object = MispObject.from_json(self, self.msg)
+        misp_object = MispObject.from_json(self, self.misp_object)
         self.assertIsInstance(misp_object, MispObject)
         self.assertTrue(hasattr(misp_object, "id"))
-        self.assertIs(misp_object.id, 2)
+        self.assertIs(misp_object.id, 1)
 
 if __name__ == '__main__':
    unittest.main()
