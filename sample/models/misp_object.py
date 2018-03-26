@@ -17,4 +17,4 @@ class MispObject(Model):
         return misp_object
 
     def to_json(self):
-        return json.dumps(self.__dict__)
+        return self.__dict__

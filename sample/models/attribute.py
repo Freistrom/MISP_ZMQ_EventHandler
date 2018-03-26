@@ -33,4 +33,7 @@ class Attribute(Model):
         self.sightings.append(sighting)
 
     def to_json(self):
-        return json.dumps(self.__dict__)
+        result = self.__dict__
+        result['shadow_attributes'] = self.shadow_attributes.to_json
+        result['sightings'] = self.sightings.to_json
+        return result

@@ -1,23 +1,68 @@
 MISP ZMQ Event Handler
 ========================
 
-MISP support ZMQ as an Event Message Broker via PubSub to extend the MISP API.
-With the MISP-ZMQ Message Handler you can write own plugins for bulk processing like Detectors or insert MISP-Events to any Database for further processing.
+[MISP](https://github.com/MISP/MISP) support [ZMQ](http://zguide.zeromq.org/) as an Event Message Broker for PubSub to extend the MISP API.
 
-`See MISP <https://github.com/MISP/MISP>`
+The MISP-ZMQ-EventHandler is an multi threaded, fast and reliable, modularized and extensible MISP-Event processing Engine. 
 
-and
+With the MISP-ZMQ-EventHandler you can write own plugins for bulk processing like Detectors or insert MISP-Events to any Database for further processing. It will be also possible to execute analysing tasks in near real-time and refine IOC's by setting new sighting automaticly or update Firewalls- and IDPS-Rules.
 
-`See ZMQ <http://zguide.zeromq.org/>`
+In further versions CUDA support and distributed processing will be implemented for complex tasks like machine learning and natural language processing. 
+
+Any ideas welcome. This tool is under development and it is not working well yet.
 
 ---------------
 
-Installation Instruction
+### Installation
 
-If you want to learn more about ``setup.py`` files, check out `this repository <https://github.com/dspautz/misp_zmq_event_handler>`
+Use
 
-Plugins
+```bash
+pip3 install -r requirements.txt
+```
 
-Tests
+Or 
 
-Documentation
+```bash
+make init
+```
+
+Install it systemwide
+
+```bash
+sudo python3 setup.py install
+```
+
+Run the Client by using
+
+```bash
+sudo systemctl enable misp_event_handler.service
+sudo systemctl start misp_event_handler.service
+```
+
+Logfile stored in */var/log/misp_event_handler.log*
+
+### Plugins
+
+Plugins must be implemented by Using a well formed Abstract Class sample.plugins.Plugin
+There are multiple types of Plugins like Output-, Compute- and Filter-Plugins.
+
+*will follow*
+
+### Tests
+
+Use setup.py to run nose-Tests
+
+```bash
+python3 setup.py test
+```
+
+Or use the integrated Makefile
+
+```bash
+make test
+```
+
+### Documentation
+
+*will follow*

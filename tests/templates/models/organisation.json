@@ -8,11 +8,11 @@
         "type": "",
         "contacts": "",
         "logo": {
-            "name": "",
-            "type": "",
-            "tmp_name": "",
+            "name": "test.png",
+            "type": "png",
+            "tmp_name": "test_0943857394557.png",
             "error": 4,
-            "size": 0
+            "size": 544
         },
         "id": 10,
         "date_modified": "2017-09-18 23:11:37"

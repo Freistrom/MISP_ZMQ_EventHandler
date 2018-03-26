@@ -3,12 +3,13 @@ import unittest
 import json
 import os
 
+
 class ModelTest(unittest.TestCase):
     """Event Model test cases."""
 
     def setUp(self):
         try:
-            model = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/model.json')))
+            model = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/model.json')))
             self.model = json.load(model)
         except NameError as e:
             raise Exception('No Model Class defined!')
@@ -21,6 +22,3 @@ class ModelTest(unittest.TestCase):
         #self.assertIsInstance(model, Model)
         #self.assertTrue(hasattr(model, "id"))
         #self.assertIs(model.id, 2)
-
-if __name__ == '__main__':
-   unittest.main()

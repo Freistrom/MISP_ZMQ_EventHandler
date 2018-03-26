@@ -1,12 +1,10 @@
+import json
+from inflection import underscore
 from .model import Model
 from .organisation import Organisation
 from .misp_object import MispObject
 from .galaxy import Galaxy
 from .attribute import Attribute
-
-
-import json
-from inflection import underscore
 
 
 class Event(Model):
@@ -63,4 +61,12 @@ class Event(Model):
         self.orgc = orgc
 
     def to_json(self):
-        return json.dumps(self.__dict__)
+        result = self.__dict__
+        result['galaxies'] = self.galaxies.to_json()
+        result['misp_objects'] = self.misp_objects.to_json()
+        result['shadow_attributes'] = self.shadow_attributes.to_json()
+        result['related_events'] = self.related_events.to_json()
+        result['attributes'] = self.attributes.to_json()
+        result['org'] = self.org.to_json()
+        result['orgc'] = self.orgc.to_json()
+        return result

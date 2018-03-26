@@ -27,7 +27,7 @@
             "name": "Freistrom",
             "uuid": "5ab2423e-0d5c-44d5-8802-0f7dc0a80018"
         },
-        "Attribute": [
+        "Attributes": [
             {
                 "id": 1,
                 "type": "text",
@@ -47,8 +47,8 @@
                 "ShadowAttribute": []
             }
         ],
-        "ShadowAttribute": [],
-        "RelatedEvent": [],
-        "Galaxy": [],
-        "Object": []
+        "ShadowAttributes": [],
+        "RelatedEvents": [],
+        "Galaxies": [],
+        "MispObjects": []
 }

@@ -1,7 +1,6 @@
 from .model import Model
 import json
 from inflection import underscore
-import pdb
 
 
 class Logo(Model):
@@ -18,4 +17,4 @@ class Logo(Model):
         return logo
 
     def to_json(self):
-        return json.dumps(self.__dict__)
+        return self.__dict__

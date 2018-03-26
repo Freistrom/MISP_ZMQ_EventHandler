@@ -17,4 +17,4 @@ class Sighting(Model):
         return sighting
 
     def to_json(self):
-        return json.dumps(self.__dict__)
+        return self.__dict__

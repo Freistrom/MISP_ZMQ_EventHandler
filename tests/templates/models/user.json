@@ -17,8 +17,8 @@
         "authkey": "__<redacted>__",
         "gpgkey": "__<redacted>__",
         "notify": 1,
-        "date_created": 1000000000,
-        "date_modified": 1000000000,
+        "date_created": "1000000000",
+        "date_modified": "1000000000",
         "newsread": 0,
         "certif_public": "",
         "id": 4

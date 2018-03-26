@@ -1,4 +1,6 @@
-zmq
+pyzmq
 nose
 sphinx
 inflection
+
+elasticsearch
