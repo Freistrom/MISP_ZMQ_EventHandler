@@ -12,18 +12,29 @@ from sample.models.attribute import Attribute
 class EventModelTest(unittest.TestCase):
     """Event Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             event = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/event.json')))
-            self.event = json.load(event)
+            cls.event = json.load(event)
         except NameError as e:
             raise Exception('No Event Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         event = Event.from_json(self, self.event)
         self.assertIsInstance(event, Event)
         self.assertTrue(hasattr(event, "id"))
         self.assertIs(event.id, 2)
+
+    def test_to_json(self):
+        pass

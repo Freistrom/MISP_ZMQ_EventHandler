@@ -1,8 +1,8 @@
-from .model import Model
-from .sighting import Sighting
 import json
 from inflection import underscore
-
+from inflection import singularize
+from .model import Model
+from .sighting import Sighting
 
 class Attribute(Model):
     """The MISP Attribute Model"""
@@ -16,10 +16,10 @@ class Attribute(Model):
         for key,value in attribute_json.items():
             if type(value) == list:
                 for struct in value:
-                    add = getattr(attribute, "add_{}".format(underscore(key)))
-                    if key in ["ShadowAttribute"]:
+                    add = getattr(attribute, "add_{}".format(singularize(underscore(key))))
+                    if key in ["ShadowAttributes"]:
                         add(Attribute.from_json(struct))
-                    elif key in ["Sighting"]:
+                    elif key in ["Sightings"]:
                         add(Sighting.from_json(struct))
             else:
                 setattr(attribute,key,value)
@@ -34,6 +34,10 @@ class Attribute(Model):
 
     def to_json(self):
         result = self.__dict__
-        result['shadow_attributes'] = self.shadow_attributes.to_json
-        result['sightings'] = self.sightings.to_json
+        result['shadow_attributes'] = []
+        result['sightings'] = []
+        for shadow_attribute in self.shadow_attributes:
+            result['shadow_attributes'].append(shadow_attribute.to_json())
+        for sighting in self.sightings:
+            result['sightings'].append(sighting.to_json())
         return result

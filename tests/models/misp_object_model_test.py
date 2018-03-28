@@ -1,23 +1,31 @@
-from sample.models.misp_object import MispObject
 import unittest
 import json
 import os
+from sample.models.misp_object import MispObject
 
 
 class MispObjectModelTest(unittest.TestCase):
-    """Event Model test cases."""
+    """MispObject Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             misp_object = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/misp_object.json')))
-            self.misp_object = json.load(misp_object)
+            cls.misp_object = json.load(misp_object)
         except NameError as e:
             raise Exception('No MispObject Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         misp_object = MispObject.from_json(self, self.misp_object)
         self.assertIsInstance(misp_object, MispObject)
         self.assertTrue(hasattr(misp_object, "id"))

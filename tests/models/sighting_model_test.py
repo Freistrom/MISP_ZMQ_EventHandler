@@ -7,6 +7,18 @@ import os
 class SightingModelTest(unittest.TestCase):
     """Sighting Model test cases."""
 
+    @classmethod
+    def setupClass(cls):
+        try:
+            sighting = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/sighting.json')))
+            cls.sighting = json.load(sighting)
+        except NameError as e:
+            raise Exception('No Sighting Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
     def setUp(self):
         try:
             sighting = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/sighting.json')))
@@ -17,7 +29,7 @@ class SightingModelTest(unittest.TestCase):
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         sighting = Sighting.from_json(self, self.sighting)
         self.assertIsInstance(sighting, Sighting)
         self.assertTrue(hasattr(sighting, "id"))

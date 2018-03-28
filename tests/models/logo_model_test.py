@@ -1,23 +1,31 @@
-from sample.models.logo import Logo
 import unittest
 import json
 import os
+from sample.models.logo import Logo
 
 
 class LogoModelTest(unittest.TestCase):
-    """User Model test cases."""
+    """Logo Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             logo = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/logo.json')))
-            self.logo = json.load(logo)
+            cls.logo = json.load(logo)
         except NameError as e:
             raise Exception('No Logo Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         logo = Logo.from_json(self, self.logo)
         self.assertIsInstance(logo, Logo)
         self.assertTrue(hasattr(logo, "name"))

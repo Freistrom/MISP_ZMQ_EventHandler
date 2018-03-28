@@ -8,17 +8,25 @@ from sample.models.logo import Logo
 class OrganisationModelTest(unittest.TestCase):
     """Organisation Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             organisation = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/organisation.json')))
-            self.organisation = json.load(organisation)
+            cls.organisation = json.load(organisation)
         except NameError as e:
             raise Exception('No Organisation Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         organisation = Organisation.from_json(self, self.organisation)
         self.assertIsInstance(organisation, Organisation)
         self.assertTrue(hasattr(organisation, "id"))

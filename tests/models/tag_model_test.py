@@ -7,17 +7,25 @@ import os
 class TagModelTest(unittest.TestCase):
     """Tag Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             tag = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/tag.json')))
-            self.tag = json.load(tag)
+            cls.tag = json.load(tag)
         except NameError as e:
             raise Exception('No Tag Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         tag = Tag.from_json(self, self.tag)
         self.assertIsInstance(tag, Tag)
         self.assertTrue(hasattr(tag, "id"))

@@ -7,17 +7,25 @@ import os
 class StatusModelTest(unittest.TestCase):
     """Status Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             status = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/status.json')))
-            self.status = json.load(status)
+            cls.status = json.load(status)
         except NameError as e:
             raise Exception('No Status Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         status = Status.from_json(self, self.status)
         self.assertIsInstance(status, Status)
         self.assertTrue(hasattr(status, "status"))

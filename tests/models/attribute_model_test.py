@@ -1,18 +1,26 @@
-from sample.models.attribute import Attribute
 import unittest
 import json
 import os
+from sample.models.attribute import Attribute
 
 
 class AttributeModelTest(unittest.TestCase):
     """Event Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             attribute = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/attribute.json')))
-            self.attribute = json.load(attribute)
+            cls.attribute = json.load(attribute)
         except NameError as e:
             raise Exception('No Attribute Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass
@@ -60,3 +68,4 @@ class AttributeModelTest(unittest.TestCase):
     def test_to_json(self):
         attribute = Attribute.from_json(self, self.attribute)
         self.assertDictEqual(attribute.to_json(), self.attribute)
+

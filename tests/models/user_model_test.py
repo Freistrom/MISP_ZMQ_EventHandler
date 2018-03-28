@@ -7,17 +7,25 @@ import os
 class UserModelTest(unittest.TestCase):
     """User Model test cases."""
 
-    def setUp(self):
+    @classmethod
+    def setupClass(cls):
         try:
             user = open(os.path.abspath(os.path.join(os.path.dirname(__file__), '../templates/models/user.json')))
-            self.user = json.load(user)
+            cls.user = json.load(user)
         except NameError as e:
             raise Exception('No User Model Class defined!')
+
+    @classmethod
+    def teardownClass(cls):
+        pass
+
+    def setUp(self):
+        pass
 
     def tearDown(self):
         pass  # clean up
 
-    def test_by_json(self):
+    def test_from_json(self):
         user = User.from_json(self, self.user)
         self.assertIsInstance(user, User)
         self.assertTrue(hasattr(user, "id"))
