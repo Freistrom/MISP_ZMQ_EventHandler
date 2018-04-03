@@ -1,0 +1,18 @@
+[Unit]
+Description=MISP ZMQ EventHandler
+After=syslog.target
+
+[Service]
+Type=simple
+User=meh
+Group=meh
+WorkingDirectory=/etc/misp-eventhandler
+ExecStart=/bin/misp-eventhandler/main.py
+SyslogIdentifier=misp-eventhandler
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

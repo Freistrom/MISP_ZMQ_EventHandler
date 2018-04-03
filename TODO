@@ -1,0 +1,14 @@
+# implement systemd installation routine
+https://www.thomaschristlieb.de/ein-python-script-mit-systemd-als-daemon-systemd-tut-garnicht-weh/
+
+# implement plugin provider
+
+# implement plugin abstract class
+
+# implement airflow REST API connector
+
+# config parser for main, plugins and airflow
+
+# unit tests for add_ method of models
+
+
