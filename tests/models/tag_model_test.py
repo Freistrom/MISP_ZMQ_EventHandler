@@ -1,4 +1,4 @@
-from sample.models.tag import Tag
+from src.models.tag import Tag
 import unittest
 import json
 import os

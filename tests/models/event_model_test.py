@@ -1,11 +1,11 @@
 import unittest
 import json
 import os
-from sample.models.event import Event
-from sample.models.organisation import Organisation
-from sample.models.misp_object import MispObject
-from sample.models.galaxy import Galaxy
-from sample.models.attribute import Attribute
+from src.models.event import Event
+from src.models.organisation import Organisation
+from src.models.misp_object import MispObject
+from src.models.galaxy import Galaxy
+from src.models.attribute import Attribute
 
 
 

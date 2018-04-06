@@ -1,4 +1,4 @@
-from sample.models.user import User
+from src.models.user import User
 import unittest
 import json
 import os

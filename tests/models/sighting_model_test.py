@@ -1,4 +1,4 @@
-from sample.models.sighting import Sighting
+from src.models.sighting import Sighting
 import unittest
 import json
 import os

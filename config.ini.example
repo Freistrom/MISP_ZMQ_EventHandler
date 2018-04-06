@@ -1,7 +1,0 @@
-[system]
-workers=4
-
-[zmq]
-host=192.168.0.24
-port=50000
-channels=all

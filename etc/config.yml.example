@@ -1,0 +1,23 @@
+misp:
+  host: localhost
+  port: 50000
+  channels:
+    - misp_json
+    - misp_json_attribute
+    - misp_json_sighting
+    - misp_json_user
+    - misp_json_organisation
+    - misp_json_self
+worker: 4
+
+plugins:
+    - misp2elastic
+
+enable_airflow: false
+log_level: info
+log_file: /var/log/misp_eventhandler/misp_eventhandler.log
+
+airflow:
+  host: localhost
+  port: 2222
+  ssl: true

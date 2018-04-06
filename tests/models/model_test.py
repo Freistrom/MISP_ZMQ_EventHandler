@@ -1,7 +1,7 @@
 import unittest
 import json
 import os
-from sample.models.model import Model
+from src.models.model import Model
 
 
 class ModelTest(unittest.TestCase):

@@ -11,4 +11,8 @@ https://www.thomaschristlieb.de/ein-python-script-mit-systemd-als-daemon-systemd
 
 # unit tests for add_ method of models
 
+# Add global Logger
+
+# Add global Config objects
+
 

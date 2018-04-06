@@ -1,7 +1,7 @@
 import unittest
 import json
 import os
-from sample.models.logo import Logo
+from src.models.logo import Logo
 
 
 class LogoModelTest(unittest.TestCase):
