@@ -1,4 +1,4 @@
-from sample.models.status import Status
+from src.models.status import Status
 import unittest
 import json
 import os

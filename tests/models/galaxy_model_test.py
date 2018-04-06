@@ -1,7 +1,7 @@
 import unittest
 import json
 import os
-from sample.models.galaxy import Galaxy
+from src.models.galaxy import Galaxy
 
 
 class GalaxyModelTest(unittest.TestCase):

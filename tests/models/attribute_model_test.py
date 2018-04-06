@@ -1,7 +1,7 @@
 import unittest
 import json
 import os
-from sample.models.attribute import Attribute
+from src.models.attribute import Attribute
 
 
 class AttributeModelTest(unittest.TestCase):

@@ -9,7 +9,7 @@ class Plugin(ABC):
         pass
 
     @staticmethod
-    def exec(self, json):
+    def exec(self, msg):
         pass
 
     @staticmethod

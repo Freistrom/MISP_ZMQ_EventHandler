@@ -44,7 +44,7 @@ Logfile stored in */var/log/misp_event_handler.log*
 
 ### Plugins
 
-Plugins must be implemented by Using a well formed Abstract Class sample.plugins.Plugin
+Plugins must be implemented by Using a well formed Abstract Class src.plugins.Plugin
 There are multiple types of Plugins like Output-, Compute- and Filter-Plugins.
 
 *will follow*
@@ -61,6 +61,11 @@ Or use the integrated Makefile
 
 ```bash
 make test
+```
+
+Run a single Tests for plugins
+```bash
+python3 ./setup.py nosetests --nocapture -w plugins/output/misp2elastic/tests/misp2elastic_test.py
 ```
 
 ### Documentation

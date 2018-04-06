@@ -25,5 +25,6 @@ class Organisation(Model):
 
     def to_json(self):
         result = self.__dict__
-        result['logo'] = self.logo.to_json()
+        if hasattr(self, 'logo'):
+            result['logo'] = self.logo.to_json()
         return result

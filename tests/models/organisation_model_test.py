@@ -1,8 +1,8 @@
 import unittest
 import json
 import os
-from sample.models.organisation import Organisation
-from sample.models.logo import Logo
+from src.models.organisation import Organisation
+from src.models.logo import Logo
 
 
 class OrganisationModelTest(unittest.TestCase):

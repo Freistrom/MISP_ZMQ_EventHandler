@@ -1,7 +1,7 @@
 import unittest
 import json
 import os
-from sample.models.misp_object import MispObject
+from src.models.misp_object import MispObject
 
 
 class MispObjectModelTest(unittest.TestCase):
