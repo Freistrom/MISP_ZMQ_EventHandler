@@ -29,21 +29,21 @@ class Main(object):
 
     #  ASYNC-Socket to talk to server
     def recv_and_process(self):
-        print('Connecting to MISP-ZMQ Server...')
+        self.logger.info('Connecting to MISP-ZMQ Server...')
         s = ctx.socket(zmq.SUB)
         s.connect('tcp://192.168.0.24:50000')
         s.setsockopt(zmq.SUBSCRIBE, b'')
-        print('MISP-Server connection established.')
-        print('Subscribed and listening for MISP-Messages...\n')
+        self.logger.info('MISP-Server connection established.')
+        self.logger.info('Subscribed and listening for MISP-Messages...')
         while True:
            # Process all parts of the message
            msg = s.recv_multipart()
-           print('New MISP-Message received.')
+           self.logger.info('New MISP-Message received.')
            pool.apply_async(EventHandler, args=(msg))
            #p = Process(target = EventHandler.process(msg), args = msg)
            #p.start()
         s.close()
-        print("Connection closed!")
+        self.logger.info("Connection closed!")
 
 
 if __name__ == "__main__":
