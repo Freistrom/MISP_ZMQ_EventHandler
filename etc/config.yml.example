@@ -11,7 +11,7 @@ misp:
 worker: 4
 
 plugins:
-    - misp2elastic
+  - misp2elastic
 
 enable_airflow: false
 log_level: info

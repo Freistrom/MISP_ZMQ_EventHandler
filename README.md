@@ -45,7 +45,14 @@ Logfile stored in */var/log/misp_event_handler.log*
 ### Plugins
 
 Plugins must be implemented by Using a well formed Abstract Class src.plugins.Plugin
-There are multiple types of Plugins like Output-, Compute- and Filter-Plugins.
+
+After installation MispEventHandler, plugins are stored in /var/lib/misp_eventhandler/plugins
+
+Each plugin could have a config file named config.yml and must have a main python file named PLUGIN_NAME.py inside a python module with the same name. The main python file needs to implement a class named by the same plugin name in CamelCase syntax.
+
+/var/lib/misp_eventhandler/plugins/misp2elastic/misp2elastic.py:Misp2Elastic()
+/var/lib/misp_eventhandler/plugins/misp2elastic/__init__.py
+
 
 *will follow*
 
