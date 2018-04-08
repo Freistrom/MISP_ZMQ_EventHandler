@@ -7,6 +7,7 @@ import argparse
 import pdb
 #import zmq.asyncio
 import multiprocessing as mp
+from multiprocessing import Queue
 from multiprocessing import Process, Pool
 from event_handler import EventHandler
 
@@ -23,14 +24,14 @@ class Main(object):
         self.pool = Pool(processes=mp.cpu_count())
         self.config = Config(params)
         self.logger = MEHLogger(self.config)
-        pdb.set_trace()
         self.plugin_provider = PluginProvider(self.config, self.logger)
+        self.event_handler = EventHandler(self.plugin_provider, self.logger)
 
     #  ASYNC-Socket to talk to server
-    def recv_and_process(self):
-        self.logger.info('Connecting to MISP-ZMQ Server...')
+    def start(self):
+        self.logger.info('Connecting to MISP-ZMQ Server at %s:%s' % (self.config.misp_host, self.config.misp_port))
         s = self.ctx.socket(zmq.SUB)
-        s.connect('tcp://192.168.0.24:50000')
+        s.connect('tcp://%s:%s' % (self.config.misp_host, self.config.misp_port))
         s.setsockopt(zmq.SUBSCRIBE, b'')
         self.logger.info('MISP-Server connection established.')
         self.logger.info('Subscribed and listening for MISP-Messages...')
@@ -38,12 +39,15 @@ class Main(object):
            # Process all parts of the message
            msg = s.recv_multipart()
            self.logger.info('New MISP-Message received.')
-           self.pool.apply_async(EventHandler, args=(msg))
-           #p = Process(target = EventHandler.process(msg), args = msg)
-           #p.start()
+           #res = self.pool.apply_async(self.process, args=(msg))
+           #self.logger.info(res.get(timeout=1))
+           p = Process(target = self.process, args=msg)
+           p.start()
         s.close()
         self.logger.info("Connection closed!")
 
+    def process(self, msg):
+        self.event_handler.process(msg)
 
 if __name__ == "__main__":
 
@@ -84,4 +88,4 @@ if __name__ == "__main__":
     )
 
     main = Main(parser.parse_args())
-    main.recv_and_process()
+    main.start()

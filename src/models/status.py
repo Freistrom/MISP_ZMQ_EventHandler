@@ -9,7 +9,7 @@ class Status(Model):
     def __init__(self):
         pass
 
-    def from_json(self, status_json):
+    def from_json(status_json):
         status = Status()
         for key,value in status_json.items():
             setattr(status,key,value)

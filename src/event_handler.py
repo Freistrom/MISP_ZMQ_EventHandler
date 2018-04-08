@@ -1,33 +1,35 @@
 import time
 import json
-import models
 import syslog
+import threading
+import models
 
 
 class EventHandler():
 
-    def __init__(self, msg):
+    def __init__(self, plugin_provider, logger):
+        self.cond = threading.Condition()
+        self.logger = logger
+        self.plugin_provider = plugin_provider
+        self.logger.info("Initialize EventHandler")
+
+    def process(self, msg):
+        self.logger.info('Start processing MISP-Event')
         try:
-            print("Initializing MISP-Message...")
             parts = msg.decode('utf-8').split(maxsplit=1)
             self.msg = json.loads(parts[1])
             self.channel = parts[0]
             self.type = list(self.msg.keys())[0]
-            print("MISP-Channel: {}".format(self.channel))
-            print("MSG-Type: {}".format(self.type))
-            print("Initializing MISP-Message done.")
-            self.process()
-        except Exception as e:
-            print("Error during MISP-Event initializing!")
-            print(e)
-
-    def process(self):
-        try:
-            print('--- Start processing MISP-Event')
-            model = globals['models.{}',format(self.type)]
-            status = models.Status.from_json(self, self.msg)
-            print("Status: {}".format(status.status))
-            print("Timestamp: {}".format(status.uptime))
-            print('--- Processing done.\n')
+            for plugin in self.plugin_provider.plugins:
+                self.logger.info("Run Plugin %s for Message type %s" % (plugin.__class__.__name__, self.type))
+                plugin.run(self._msg_model())
         except:
             raise Exception("Error during MISP-Event processing!")
+
+        self.logger.info("MISP-Channel: {}".format(self.channel))
+        self.logger.info("MSG-Type: {}".format(self.type))
+        self.logger.info('MISP Message Processing done')
+
+    def _msg_model(self):
+        class_name = self.type.capitalize()
+        return getattr(models, class_name).from_json(self.msg)

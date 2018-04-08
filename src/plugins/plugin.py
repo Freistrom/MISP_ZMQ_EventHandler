@@ -6,12 +6,13 @@ class Plugin(ABC):
 
     CONFIG_SEARCH_PATH = '/var/lib/misp_eventhandler/plugins/'
 
-    def __init__(self):
+    def __init__(self, logger):
+        self.logger = logger
         self._load_plugin_config()
         super().__init__()
 
     @abstractmethod
-    def handler_msg(self, msg):
+    def run(self, msg_model):
         pass
 
     def _load_plugin_config(self):
