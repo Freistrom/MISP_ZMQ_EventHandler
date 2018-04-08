@@ -19,7 +19,7 @@ class Main(object):
     def __init__(self, params):
         self.ctx = zmq.Context()
         self.pool = Pool(processes=mp.cpu_count())
-        self.config = Config(params)
+        self.config = Config(params = params)
         self.logger = MEHLogger(self.config)
         self.plugin_provider = PluginProvider(self.config, self.logger)
         self.event_handler = EventHandler(self.plugin_provider, self.logger)

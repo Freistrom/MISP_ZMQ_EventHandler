@@ -15,7 +15,7 @@ class EventHandler():
 
     def process(self, msg):
         self.logger.info('Start processing MISP-Event')
-        self._parse_msg()
+        self._parse_msg(msg)
         try:
             for plugin in self.plugin_provider.plugins:
                 self.logger.info("Run Plugin %s for Message type %s" % (plugin.__class__.__name__, self.type))
@@ -27,7 +27,7 @@ class EventHandler():
         self.logger.info("MSG-Type: {}".format(self.type))
         self.logger.info('MISP Message Processing done')
 
-    def _parse_msg(self):
+    def _parse_msg(self, msg):
         try:
             parts = msg.decode('utf-8').split(maxsplit=1)
             self.msg = json.loads(parts[1])

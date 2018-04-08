@@ -2,4 +2,7 @@ elasticsearch:
   host: localhost
   port: 9200
   ssl: false
+
+log_level: info
+log_file: main
   

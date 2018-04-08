@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 from inflection import camelize
+from config import Config
 
+CONFIG_SEARCH_PATH = '/var/lib/misp_eventhandler/plugins/'
 
 class Plugin(ABC):
 
-    CONFIG_SEARCH_PATH = '/var/lib/misp_eventhandler/plugins/'
 
     def __init__(self, logger):
         self.logger = logger
@@ -15,10 +16,17 @@ class Plugin(ABC):
     def run(self, msg_model):
         pass
 
-    def _load_plugin_config(self):
+    @abstractmethod
+    def before_hook(self):
         pass
-        #try:
-        #    config.add_config("/var/lib/misp_eventhandler/plugins/%s/config.yml" % plugin_name)
-        #except ConfigNotFoundError as e:
-        #    self.logger.warning("No config file found for plugin %s!" % plugin_name)
-        #    self.logger.warning("Expected config file: /var/lib/misp_eventhandler/plugins/%s/config.yml" % plugin_name)
+
+    @abstractmethod
+    def after_hook(self):
+        pass
+
+    def _load_plugin_config(self):
+        self.logger.info(self.__class__.__name__)
+        config_path = CONFIG_SEARCH_PATH
+        config_path += self.__class__.__name__.lower()
+        config_path += "/config.yml"
+        self.config = Config(path = config_path)
